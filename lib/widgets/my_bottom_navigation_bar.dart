@@ -1,4 +1,7 @@
+
+import 'package:bloglinux/controllers/page_controllers.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({super.key});
@@ -9,14 +12,12 @@ class MyBottomNavigationBar extends StatefulWidget {
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
 
-  int position = 0;
+  var controllerPage = Get.put(ControllerPages());
 
   Widget iconBar(bool enable, IconData icono, int index){
     return InkWell(
       onTap: () {
-        setState(() {
-          position = index;
-        });
+        controllerPage.changeView(index);
       },
       child: SizedBox(
         //color: Color.fromARGB(146, 89, 82, 19),
@@ -49,7 +50,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color:Color.fromARGB(255, 247, 239, 216),
+        color:Colors.white,
         boxShadow: const [
           BoxShadow(
             color: Colors.grey,
@@ -58,16 +59,29 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           )
         ]
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          iconBar(position == 0, Icons.alternate_email_sharp,0),
-          iconBar(position == 1, Icons.code,1),
-          iconBar(position == 2, Icons.apps_rounded,2),
-          iconBar(position == 3, Icons.settings,3),
-          
-
-        ],
+      child:
+      Obx(() =>
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            iconBar(
+              controllerPage.page.value == 0,
+              Icons.desktop_windows_rounded,
+              0),
+            iconBar(
+              controllerPage.page.value == 1,
+              Icons.terminal_rounded,
+              1),
+            iconBar(
+              controllerPage.page.value == 2,
+              Icons.all_inbox_rounded,
+              2),
+            iconBar(
+              controllerPage.page.value == 3,
+              Icons.settings_rounded,
+              3),
+          ],
+        )
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:bloglinux/widgets/myContainer.dart';
 import 'package:bloglinux/widgets/my_chips_desktop.dart';
 import 'package:flutter/material.dart';
 
@@ -11,29 +12,7 @@ class MyCardHorizontal extends StatefulWidget {
 class _MyCardHorizontalState extends State<MyCardHorizontal> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(20),
-        onTap: () {},
-        child:Ink(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.white,
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(5,5),
-                blurStyle: BlurStyle.inner
-              )
-            ]
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(10),
+    return MyContainer(
             child: Column(
               children: [
                 Row(
@@ -44,7 +23,8 @@ class _MyCardHorizontalState extends State<MyCardHorizontal> {
                       width: 80,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 216, 216, 216)
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        image: DecorationImage(image: Image.asset("assets/img/manjaro_linux.png").image)
                       ),
                     ),
                     const SizedBox(width: 10,),
@@ -75,9 +55,7 @@ class _MyCardHorizontalState extends State<MyCardHorizontal> {
                 Text("Manjaro es una distribución Linux basada en Arch que destaca por su enfoque en la facilidad de uso, ofreciendo estabilidad y acceso rápido a las últimas actualizaciones.")
               ],
             ),
-          ),
-        )
-      ),
+          
     );
   }
 }
