@@ -8,7 +8,7 @@ class ControllerPages extends GetxController{
   void changeView(int page){
     pageController.value.animateToPage(
       page,
-      duration: const Duration(milliseconds: 100),
+      duration: const Duration(milliseconds: 200),
       curve: Curves.linear
     );
   }

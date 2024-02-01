@@ -20,19 +20,7 @@ class _PageHomeState extends State<PageHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 80,
-        title: const Text("Linux All"),
-        backgroundColor: Colors.transparent,
-        flexibleSpace:  ClipRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-          child: Container(
-            color: Colors.transparent,
-          ),
-        )),
-      ),
-      bottomNavigationBar:MyBottomNavigationBar(),
+      bottomNavigationBar: const MyBottomNavigationBar(),
       backgroundColor: const Color(0xffF8F8F8),
       body: MySwiperPage(pages: [
         wdgHome(),
@@ -46,7 +34,10 @@ class _PageHomeState extends State<PageHome> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MyTitleApp(title: "Hola"),
+            MyTitleApp(
+              title: "Distribuciones linux",
+              subtitle: "Aquí encontrarás una amplia variedad de sistemas operativos basados en Linux, cada uno con sus características únicas y ventajas. Sumérgete en el fascinante mundo del software de código abierto y descubre las opciones disponibles para personalizar y optimizar tu experiencia informática.",
+            ),
             MyCardHorizontal(),
             MyCardHorizontal(),
             MyCardHorizontal(),

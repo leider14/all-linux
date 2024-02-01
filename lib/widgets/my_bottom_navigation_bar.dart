@@ -19,7 +19,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
       onTap: () {
         controllerPage.changeView(index);
       },
-      child: SizedBox(
+      child: Container(
         //color: Color.fromARGB(146, 89, 82, 19),
         width: 40,
         height: 40,
@@ -46,16 +46,16 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      margin: const EdgeInsets.fromLTRB(20,0,20,20),
+      //margin: const EdgeInsets.fromLTRB(20,0,20,20),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         color:Colors.white,
         boxShadow: const [
           BoxShadow(
-            color: Colors.grey,
+            color: Color.fromARGB(101, 158, 158, 158),
             offset: Offset(5,5),
-            blurStyle: BlurStyle.inner
+            blurRadius: 10,
           )
         ]
       ),

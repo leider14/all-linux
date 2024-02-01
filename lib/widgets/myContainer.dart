@@ -29,9 +29,10 @@ class MyContainer extends StatelessWidget {
             color: Colors.white,
             boxShadow: const [
               BoxShadow(
-                color: Colors.grey,
+                color: Color.fromARGB(101, 158, 158, 158),
                 offset: Offset(5,5),
-                blurStyle: BlurStyle.inner
+                blurRadius: 10,
+                //blurStyle: BlurStyle.outer
               )
             ]
           ),
