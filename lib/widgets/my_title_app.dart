@@ -1,5 +1,6 @@
 
 
+import 'package:bloglinux/style/font_style.dart';
 import 'package:flutter/material.dart';
 
 class MyTitleApp extends StatelessWidget {
@@ -15,26 +16,24 @@ class MyTitleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
     Padding(
-      padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
+      padding: EdgeInsets.fromLTRB(
+        20,
+        50,
+        20,
+        subtitle.isNotEmpty ? 20 :5),
       child: 
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [     
           Text(
             title, 
-            textScaler:const TextScaler.linear(2),
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-            ),
+            textScaler:const TextScaler.linear(1.5),
+            style: myStlTitleApp,
           ), 
-          if(subtitle.isNotEmpty)Text(
+          if(subtitle.isNotEmpty)
+          Text(
             subtitle, 
-            //textScaler:const TextScaler.linear(),
-            style: TextStyle(
-              //fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(200, 0, 0, 0)
-            ),
+            style: myStlTitleAppSubtitle
           ), 
         ],
       )

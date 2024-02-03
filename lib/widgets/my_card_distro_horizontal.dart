@@ -1,61 +1,121 @@
-import 'package:bloglinux/widgets/myContainer.dart';
-import 'package:bloglinux/widgets/my_chips_desktop.dart';
+import 'package:bloglinux/style/colors.dart';
+import 'package:bloglinux/style/font_style.dart';
+import 'package:bloglinux/widgets/my_container_button.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shimmer/shimmer.dart';
 
-class MyCardHorizontal extends StatefulWidget {
-  const MyCardHorizontal({super.key});
+class MyWdgCardHorizontal extends StatefulWidget {
+  final String name;
+  final String urlImage;
+  final String description;
+  final String base;
+  final List<Widget> desktops;
+  const MyWdgCardHorizontal({
+    required this.base,
+    required this.name,
+    required this.description,
+    required this.desktops,
+    required this.urlImage,
+    super.key
+  });
 
   @override
-  State<MyCardHorizontal> createState() => _MyCardHorizontalState();
+  State<MyWdgCardHorizontal> createState() => _MyWdgCardHorizontalState();
 }
 
-class _MyCardHorizontalState extends State<MyCardHorizontal> {
+class _MyWdgCardHorizontalState extends State<MyWdgCardHorizontal> {
+
   @override
   Widget build(BuildContext context) {
-    return MyContainer(
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    //TODO sacar la imagen de logo a una funcion, porque le falta la carga
-                    Container(
-                      height: 80,
+    return MyWdgContainerButton(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: SizedBox(
+                  height: 80,
+                  width: 80,
+                  child: CachedNetworkImage(
+                    imageUrl: widget.urlImage,
+                    fadeOutDuration:const Duration(seconds: 1),
+                    fadeInCurve: Curves.decelerate,
+                    placeholder: (context,url) => Shimmer.fromColors(
+                      baseColor: myClrEnrichedBlack1100,
+                      highlightColor: myClrEnrichedBlack1000,
+                      child: Container(
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white
+                        ),
+                      )
+                    ),
+                    errorWidget: (context,url,error) => Container(
                       width: 80,
+                      height: 80,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        image: DecorationImage(image: Image.asset("assets/img/manjaro_linux.png").image)
+                        color: myClrEnrichedBlack1100,
+                      ),
+                      child:const Center(
+                        child: Icon(
+                          Icons.image_not_supported_outlined,
+                          color: myClrEnrichedBlack900,
+                        ),
                       ),
                     ),
-                    const SizedBox(width: 10,),
-                    Expanded(
-                      child: 
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                  ),
+                )
+              ),
+              const SizedBox(width: 10,),
+              Expanded(
+                child: 
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(widget.name,style: myStlCardDistroTitle,),
+                      Text.rich(
+                        TextSpan(
+                          text: "Base: ",
+                          style: myStlCardDistroSubTitle,
                           children: [
-                            Text("Manjaro"),
-                            Text("Base: Arch"),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child:
-                                Row(children: [
-                                  MyChipsDesktop.xfce4,
-                                  MyChipsDesktop.kde,
-                                  MyChipsDesktop.gnome,
-                                ],
-                              )
+                            TextSpan(                              
+                              text: widget.base,
+                              style: myStlCardDistroText,
                             )
-                          ],
+                          ],                          
                         )
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10,),
-                Text("Manjaro es una distribución Linux basada en Arch que destaca por su enfoque en la facilidad de uso, ofreciendo estabilidad y acceso rápido a las últimas actualizaciones.")
-              ],
-            ),
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child:
+                          Row(children: widget.desktops,
+                        )
+                      )
+                    ],
+                  )
+              ),
+            ],
+          ),
+          const SizedBox(height: 10,),
+          Text(
+            widget.description,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 3,
+            style: myStlBaseText,
+          )
+        ],
+      ),
           
     );
   }
+
+  
 }

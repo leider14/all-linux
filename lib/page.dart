@@ -1,5 +1,5 @@
 
-import 'package:bloglinux/controllers/page_controllers.dart';
+import 'package:bloglinux/controllers/my_navigator_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +16,7 @@ class MySwiperPage extends StatefulWidget {
 
 class _MySwiperPageState extends State<MySwiperPage> {
 
-  var controllerPage = Get.put(ControllerPages());
+  var controllerPage = Get.put(MyNavigatorController());
 
   @override
   Widget build(BuildContext context) {

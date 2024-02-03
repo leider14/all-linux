@@ -1,5 +1,9 @@
-import 'package:bloglinux/pages/home.dart';
 import 'package:bloglinux/page.dart';
+import 'package:bloglinux/pages/my_commands_page.dart';
+import 'package:bloglinux/pages/my_contruction_page.dart';
+import 'package:bloglinux/pages/my_home_page.dart';
+import 'package:bloglinux/style/colors.dart';
+import 'package:bloglinux/widgets/my_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,8 +20,21 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PageHome()
-      
+      home:  const Scaffold(
+        bottomNavigationBar:  MyBottomNavigationBar(),
+        backgroundColor:  myClrBackground,
+        body: MySwiperPage(
+          pages: [
+            MyConstructionPage(),
+            MyHomePage(),
+            MyCommandsPage(),
+            MyConstructionPage(),
+            MyConstructionPage(),
+          ]
+        )
+      )      
     );
   }
 }
+
+

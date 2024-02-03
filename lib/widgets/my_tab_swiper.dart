@@ -1,6 +1,6 @@
 
 
-import 'package:bloglinux/controllers/comands_controllers.dart';
+import 'package:bloglinux/controllers/my_commands_page_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,39 +13,38 @@ class MyTabSwiper extends StatefulWidget {
 
 class _MyTabSwiperState extends State<MyTabSwiper> {
 
-
-  var pageController = Get.put(ControllerComads());
+  var controllerPage = Get.put(MyCommandsPageController());
   
   Widget wdgButton(String name, int id, IconData icon){
-    return 
-    GestureDetector(
+    return GestureDetector(
       onTap: () {
-        pageController.idCategory.value = id;
-        print(pageController.idCategory.value);
+        controllerPage.idCategory.value = id;
       },
 
-      child:  Container( 
-        margin: const EdgeInsets.only(left: 5),     
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: id ==  0 ? Colors.black : Colors.white60
-        ),
-        child: Row(
-          children: [
-            Icon(icon,
-              color: id == 0 ? Colors.white : Colors.black,
-              size: 20,
-            ),
-            const SizedBox(width: 5,),
-            Text(name,
-            
-            style: TextStyle(
-              color: id == 0 ? Colors.white : Colors.black,
-              fontWeight: 0 == 0? FontWeight.bold : FontWeight.normal
-            ),
+      child:  Obx(()=>
+        Container( 
+          margin: const EdgeInsets.only(left: 5),     
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: id ==  controllerPage.idCategory.value? Colors.black : Colors.white60
           ),
-          ],
+          child: Row(
+            children: [
+              Icon(icon,
+                color: id == controllerPage.idCategory.value? Colors.white : Colors.black,
+                size: 20,
+              ),
+              const SizedBox(width: 5,),
+              Text(name,
+              
+              style: TextStyle(
+                color: id == controllerPage.idCategory.value? Colors.white : Colors.black,
+                fontWeight: 0 == controllerPage.idCategory.value? FontWeight.bold : FontWeight.normal
+              ),
+            ),
+            ],
+          )
         )
       )
     );
@@ -68,7 +67,7 @@ class _MyTabSwiperState extends State<MyTabSwiper> {
             wdgButton("Red", 6, Icons.wifi),
             wdgButton("Software", 7, Icons.apps),
             wdgButton("Búsqueda", 8, Icons.search),
-
+            const SizedBox(width: 20,),
             //wdgButton("Carpeta",9),
             //wdgButton("Carpetas",10),
           ],
