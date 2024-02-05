@@ -18,7 +18,7 @@ class MyCommandsPage extends StatefulWidget {
 class _MyCommandsPageState extends State<MyCommandsPage> {
 
   var controllerPage = Get.put(MyCommandsPageController());
-  ScrollController scrollController = ScrollController();
+  ScrollController scrollController = ScrollController(initialScrollOffset: 0);
   
 
   @override

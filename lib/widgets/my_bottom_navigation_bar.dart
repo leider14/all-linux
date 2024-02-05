@@ -1,4 +1,3 @@
-
 import 'package:bloglinux/controllers/my_navigator_controller.dart';
 import 'package:bloglinux/style/colors.dart';
 import 'package:flutter/material.dart';

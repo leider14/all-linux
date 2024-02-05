@@ -3,7 +3,6 @@ import 'package:bloglinux/style/font_style.dart';
 import 'package:bloglinux/widgets/my_container_button.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
 
 class MyWdgCardHorizontal extends StatefulWidget {
@@ -40,37 +39,38 @@ class _MyWdgCardHorizontalState extends State<MyWdgCardHorizontal> {
                 child: SizedBox(
                   height: 80,
                   width: 80,
-                  child: CachedNetworkImage(
-                    imageUrl: widget.urlImage,
-                    fadeOutDuration:const Duration(seconds: 1),
-                    fadeInCurve: Curves.decelerate,
-                    placeholder: (context,url) => Shimmer.fromColors(
-                      baseColor: myClrEnrichedBlack1100,
-                      highlightColor: myClrEnrichedBlack1000,
-                      child: Container(
+                  child: 
+                    CachedNetworkImage(
+                      imageUrl: widget.urlImage,
+                      fadeOutDuration:const Duration(seconds: 1),
+                      fadeInCurve: Curves.decelerate,
+                      placeholder: (context,url) => Shimmer.fromColors(
+                        baseColor: myClrEnrichedBlack1100,
+                        highlightColor: myClrEnrichedBlack1000,
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white
+                          ),
+                        )
+                      ),
+                      errorWidget: (context,url,error) => Container(
                         width: 80,
                         height: 80,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.white
+                          color: myClrEnrichedBlack1100,
                         ),
-                      )
-                    ),
-                    errorWidget: (context,url,error) => Container(
-                      width: 80,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: myClrEnrichedBlack1100,
-                      ),
-                      child:const Center(
-                        child: Icon(
-                          Icons.image_not_supported_outlined,
-                          color: myClrEnrichedBlack900,
+                        child:const Center(
+                          child: Icon(
+                            Icons.image_not_supported_outlined,
+                            color: myClrEnrichedBlack900,
+                          ),
                         ),
                       ),
                     ),
-                  ),
                 )
               ),
               const SizedBox(width: 10,),

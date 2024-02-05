@@ -1,5 +1,7 @@
 
+import 'package:bloglinux/controllers/my_commands_page_controllers.dart';
 import 'package:bloglinux/controllers/my_navigator_controller.dart';
+import 'package:bloglinux/pages/my_commands_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +19,7 @@ class MySwiperPage extends StatefulWidget {
 class _MySwiperPageState extends State<MySwiperPage> {
 
   var controllerPage = Get.put(MyNavigatorController());
+  var controllerPageCommand = Get.put(MyCommandsPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +29,7 @@ class _MySwiperPageState extends State<MySwiperPage> {
         controller: controllerPage.pageController.value,
         onPageChanged: (value) {
           controllerPage.page.value = value;
+          controllerPageCommand.showAppBar.value = false;
         },
         children: widget.pages,
     )

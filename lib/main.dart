@@ -1,7 +1,8 @@
-import 'package:bloglinux/page.dart';
+import 'package:bloglinux/pages/my_home_page.dart';
+import 'package:bloglinux/pages/my_swiper_page.dart';
 import 'package:bloglinux/pages/my_commands_page.dart';
 import 'package:bloglinux/pages/my_contruction_page.dart';
-import 'package:bloglinux/pages/my_home_page.dart';
+import 'package:bloglinux/pages/my_distros_page.dart';
 import 'package:bloglinux/style/colors.dart';
 import 'package:bloglinux/widgets/my_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +26,8 @@ class MyApp extends StatelessWidget {
         backgroundColor:  myClrBackground,
         body: MySwiperPage(
           pages: [
-            MyConstructionPage(),
             MyHomePage(),
+            MyDistrosPage(),
             MyCommandsPage(),
             MyConstructionPage(),
             MyConstructionPage(),
