@@ -21,7 +21,7 @@ List<MyDataModelDistro> dataListDistros = [
       packageManager: "pacman", // Manjaro utiliza pacman como gestor de paquetes
       architecture: "x86_64",
       urlWeb: "https://manjaro.org/", // Cambia la URL a la página oficial de Manjaro
-      urlIcon: "https://upload.wikimedia.org/wikipedia/commons/0/07/Manjaro-logo.png", // Cambia la URL al ícono de Manjaro
+      urlIcon: "https://alternative.me/media/256/manjaro-linux-icon-kcq66qcllp5d6xqk-c.png", // Cambia la URL al ícono de Manjaro
       releaseDate: DateTime(2021, 4, 27), // Cambia la fecha de lanzamiento según la versión actual de Manjaro
       base: "Arch", // Manjaro se basa en Arch Linux
       description: "Manjaro es una distribución Linux basada en Arch que destaca por su enfoque en la facilidad de uso, ofreciendo estabilidad y acceso rápido a las últimas actualizaciones."

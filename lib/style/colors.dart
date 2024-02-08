@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// Basics ////////////////////////////////////
 final MaterialColor materialbasecolor = convertHexToMaterialColor("#1CAE81");
 const Color myClrWhite = Color(0xFFFFFFFF);
-const Color myClrBaseColor = Colors.black;
+const Color myClrBaseColor = Color.fromARGB(255, 101, 88, 218);
 const Color myClrBaseColorLight = Color.fromARGB(255, 139, 184, 187);
 const Color myClrBaseColorOpaque = Color(0xFF1CA578);
 const Color myClrBaseSplash = Color(0xFF1CA578);
@@ -15,6 +15,7 @@ const Color myClrSelectionText = Color.fromARGB(40, 28, 174, 129);
 const Color myClrBarrier = Color.fromARGB(80, 24, 29, 38);
 const Color myClrText = Color.fromARGB(80, 24, 29, 38);
 const Color myClrDisable = Color.fromARGB(118, 0, 0, 0);
+const Color myClrCardNew = Color.fromARGB(255, 126, 103, 255);
 
 
 /// Black Colors ////////////////////////////

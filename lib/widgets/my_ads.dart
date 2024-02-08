@@ -12,9 +12,8 @@ class MyAds extends StatefulWidget {
 }
 
 class _MyAdsState extends State<MyAds> {
-
   int positionPhrase = 0;
-
+  late Timer _timer;
   List<String> frases = [
     "En el mundo Linux, la libertad y la personalización son las reglas del juego.",
     "La mejor manera de predecir el futuro es programarlo.",
@@ -25,15 +24,23 @@ class _MyAdsState extends State<MyAds> {
 
   @override
   void initState() {
-    Timer.periodic(const Duration(seconds: 5), (timer) {
-      if(positionPhrase < frases.length -1){
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (positionPhrase < frases.length - 1) {
         positionPhrase++;
-      }else{
+      } else {
         positionPhrase = 0;
       }
-      setState(() {});
+      if (mounted) {
+        setState(() {});
+      }
     });
-    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
 

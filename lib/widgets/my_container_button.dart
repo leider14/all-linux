@@ -13,31 +13,24 @@ class MyWdgContainerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10
+    return  Container(
+      margin: const EdgeInsets.symmetric(
+      horizontal: 20,
+      vertical: 10),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: myClrBackgroundCard,
+        boxShadow: const [
+          BoxShadow(
+            color: myClrShadow,
+            offset: Offset(5,5),
+            blurRadius: 10,
+            //blurStyle: BlurStyle.outer
+          )
+        ]
       ),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: myClrBackgroundCard,
-          boxShadow: const [
-            BoxShadow(
-              color: myClrShadow,
-              offset: Offset(5,5),
-              blurRadius: 10,
-              //blurStyle: BlurStyle.outer
-            )
-          ]
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: child
-        )
-      )
+      child: child   
     );
   }
 }

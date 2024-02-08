@@ -46,3 +46,26 @@ TextStyle myStlCardAdsSubTitle = const TextStyle(
   color: myClrEnrichedBlack100,
 );
 
+TextStyle myStlCardNewTitle = const TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+  color: myClrWhite
+);
+
+TextStyle myStlCardNewSubTitle = const TextStyle(
+  fontWeight: FontWeight.normal,
+  fontSize: 10,
+  color: myClrWhite
+);
+
+TextStyle myStlHomeTitle = const TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 18,
+  color: myClrEnrichedBlack100
+);
+
+TextStyle myStlHomeTitleShowAll = const TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 18,
+  color: myClrBaseColor
+);
