@@ -3,14 +3,14 @@ import 'package:bloglinux/widgets/my_card_distro_horizontal.dart';
 import 'package:bloglinux/widgets/my_title_app.dart';
 import 'package:flutter/material.dart';
 
-class MyDistrosPage extends StatefulWidget {
-  const MyDistrosPage({super.key});
+class MyDistrosListPage extends StatefulWidget {
+  const MyDistrosListPage({super.key});
 
   @override
-  State<MyDistrosPage> createState() => _MyDistrosPageState();
+  State<MyDistrosListPage> createState() => _MyDistrosListPageState();
 }
 
-class _MyDistrosPageState extends State<MyDistrosPage> {
+class _MyDistrosListPageState extends State<MyDistrosListPage> {
   @override
   Widget build(BuildContext context) {
     return  SingleChildScrollView(
@@ -31,11 +31,11 @@ class _MyDistrosPageState extends State<MyDistrosPage> {
     List<Widget> distrosWidget = [];
     for (var distro in dataListDistros) {
       distrosWidget.add(MyWdgCardHorizontal(
-        base: distro.base,
+        base: distro.base!,
         name: distro.name,
-        description:distro.description,
-        desktops: distro.desktop,
-        urlImage: distro.urlIcon
+        description:distro.description!,
+        desktops: distro.desktop!,
+        urlImage: distro.urlIcon!
       ));
     }
     return Column(children: distrosWidget,);

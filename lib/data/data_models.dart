@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 //Tipos de Comandos
@@ -25,28 +26,30 @@ class MyDataModelCommand{
 }
 
 
-class MyDataModelDistro{
+class MyDataModelDistro {
   final String name;
-  final String version;
-  final List<Widget> desktop;
-  final String packageManager;
-  final String architecture;
-  final String urlWeb;
-  final String urlIcon;
-  final DateTime releaseDate;
-  final String description;
-  final String base;
+  final String? version;
+  final List<Widget>? desktop;
+  final String? packageManager;
+  final String? architecture;
+  final String? urlWeb;
+  final String? urlIcon;
+  final DateTime? releaseDate;
+  final String? description;
+  final String? base;
+
   MyDataModelDistro({
     required this.name,
-    required this.version,
-    required this.desktop,
-    required this.packageManager,
-    required this.architecture,
-    required this.urlWeb,
-    required this.urlIcon,
-    required this.releaseDate, 
-    required this.base,
-    required this.description
+    this.version,
+    this.desktop,
+    this.packageManager,
+    this.architecture,
+    this.urlWeb,
+    this.urlIcon,
+    this.releaseDate,
+    this.description,
+    this.base,
   });
 }
+
 

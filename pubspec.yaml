@@ -9,25 +9,27 @@ environment:
 
 dependencies:
   cached_network_image: ^3.3.1
+  cloud_firestore: ^4.15.6
+  firebase_core: ^2.25.5
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.3.10
   flutter_svg: ^2.0.9
   get: ^4.6.6
+  intl: ^0.19.0
   shimmer: ^3.0.0
-
 
 flutter_native_splash:
   color: "6558DA"
-  image: assets/img/error_loading.png
+  image: "assets/icon/logo.png"
   android: true
-  ios: true
+  ios: false
   web: false
 
   android_12:
-    image: assets/img/error_loading.png
+    image: "assets/icon/logo.png"
     icon_background_color: "6558DA"
-    image_dark: assets/img/error_loading.png
+    image_dark: "assets/icon/logo.png"
     icon_background_color_dark: "6558DA"
 
 dev_dependencies:

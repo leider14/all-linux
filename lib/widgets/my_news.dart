@@ -2,10 +2,7 @@
 
 import 'package:bloglinux/style/colors.dart';
 import 'package:bloglinux/style/font_style.dart';
-import 'package:bloglinux/widgets/my_container_button.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 
 class MyWdgNews extends StatefulWidget {
   const MyWdgNews({super.key});
@@ -20,7 +17,7 @@ class _MyWdgNewsState extends State<MyWdgNews> {
     return Container(
       margin: const EdgeInsets.symmetric(
         horizontal: 20,
-        vertical: 10),
+        vertical: 0),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),

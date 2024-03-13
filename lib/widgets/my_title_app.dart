@@ -16,11 +16,7 @@ class MyTitleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
     Padding(
-      padding: EdgeInsets.fromLTRB(
-        20,
-        50,
-        20,
-        subtitle.isNotEmpty ? 20 :5),
+      padding: EdgeInsets.fromLTRB( 20, 50,  20, subtitle.isNotEmpty ? 20 :5),
       child: 
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,

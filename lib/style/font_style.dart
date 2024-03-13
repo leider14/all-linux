@@ -69,3 +69,20 @@ TextStyle myStlHomeTitleShowAll = const TextStyle(
   fontSize: 18,
   color: myClrBaseColor
 );
+
+TextStyle myStlTileListTitle = const TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 18,
+  color: myClrEnrichedBlack100
+);
+
+TextStyle myStlTileListText = const TextStyle(
+  fontWeight: FontWeight.normal,
+  fontSize: 15,
+  color: myClrEnrichedBlack400
+);
+
+TextStyle myStlShowText = const TextStyle(
+  fontWeight: FontWeight.w800,
+  color: myClrBaseColor,
+);

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96139087621",
+    "project_id": "all-linux",
+    "storage_bucket": "all-linux.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96139087621:android:b2a74a5eac01be0a4f316c",
+        "android_client_info": {
+          "package_name": "com.example.bloglinux"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1gJTgkeJuueblclzR8GdTmHbDN4w_mas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
