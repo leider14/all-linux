@@ -15,6 +15,10 @@ El proyecto abarca una variedad de temas relacionados con Linux, ofreciendo info
 
 - **Recursos para Aprender Linux:** Una sección dedicada a recursos educativos que facilitan el aprendizaje de Linux, desde tutoriales hasta documentación y cursos recomendados.
 
+## Screenshots
+|  ![Imagen 3](ReadmeFiles/3.png)| ![Imagen 2](ReadmeFiles/2.png) | ![Imagen 1](ReadmeFiles/1.png) |
+| --- | --- | --- |
+
 ## Tecnologías Utilizadas
 
 La aplicación está desarrollada en Flutter, un marco de trabajo que permite la creación de aplicaciones multiplataforma con un solo código base. Próximamente, se integrará Firebase para posibilitar actualizaciones sencillas y mantener la aplicación siempre al día.
